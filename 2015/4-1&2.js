@@ -5,8 +5,7 @@ function md5(d) { return rstr2hex(binl2rstr(binl_md5(rstr2binl(d), 8 * d.length)
 function calculateTheLowestNumber(secretKey = SECRET_KEY, startsWith) {
   let number = 0;
 
-  let isMet = false;
-  while (!isMet) {
+  while (true) {
     number++
 
     const MD5Hashed = md5(`${secretKey}${number}`)
